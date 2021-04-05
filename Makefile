@@ -65,6 +65,8 @@ web:
 	docker-compose exec web ash
 app:
 	docker-compose exec app bash
+redis:
+	docker-compose exec redis bash
 migrate:
 	docker-compose exec app php artisan migrate
 fresh:
@@ -121,8 +123,6 @@ db:
 	docker-compose exec db bash
 sql:
 	docker-compose exec db bash -c 'mysql -u $$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'
-redis:
-	docker-compose exec redis redis-cli
 ide-helper:
 	docker-compose exec app php artisan clear-compiled
 	docker-compose exec app php artisan ide-helper:generate
