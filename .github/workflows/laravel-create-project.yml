@@ -34,7 +34,7 @@ jobs:
         run: docker-compose exec -T app php artisan --version
 
       - name: Generate .env
-        run: docker-compose exec -T app mv /work/backend/.env.sample /work/backend/.env
+        run: docker-compose exec -T app cp .env.sample .env
 
       - name: Laravel Key Generate
         run: docker-compose exec -T app php artisan key:generate
