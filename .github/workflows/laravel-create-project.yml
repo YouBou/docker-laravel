@@ -33,6 +33,9 @@ jobs:
       - name: Laravel Version
         run: docker-compose exec -T app php artisan --version
 
+      - name: Laravel Key Generate
+        run: docker-compose exec -T app php artisan key:generate
+
       - name: Laravel Migrate Testing
         run: docker-compose exec -T app php artisan migrate --force
 
