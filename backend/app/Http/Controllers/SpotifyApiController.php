@@ -35,8 +35,13 @@ class SpotifyApiController extends BaseController
             die();
         }
 
+        $result = $api->search('Yorimichi', 'artist');
+
         echo '<pre>';
-            print_r($api->me()); //認証を受けたアカウントのプロフィールが表示される
+            print_r($result->artists->items[1]->images[0]);
         echo '</pre>';
+
+        $img = $result->artists->items[1]->images[0]->url;
+        echo '<img src=' . $img . '>';
     }
 }
